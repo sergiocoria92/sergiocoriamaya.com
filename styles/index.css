@@ -1,0 +1,245 @@
+
+.name span {/* Estilo para cada letra del nombre... RECUERDA QUE SPAN ES UN ELEMENTO EN LÍNEA, lo creaste en javascript,igual que name*/
+  display: inline-block;
+  transition: transform 0.3s;
+  padding: 5px;
+  top: 20px;
+}
+
+.name span:hover {
+  transform: translateY(-10px);
+}
+
+
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  background: white;
+  position: relative;
+}
+
+.hero-text {
+  font-size: 70px;
+  font-weight: 800;
+}
+
+
+
+/* Estilos para el card que se superpone a la imagen y al texto */
+.hero-image {
+  position: relative;
+  width: 420px;
+  height: 600px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 420px;
+  max-height: 600px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-one {
+  z-index: 1;
+}
+
+.image-two {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+}
+/* Estilos para el card que se superpone a la imagen y al texto */
+
+
+
+
+
+.hero-card {
+  position: absolute;
+  bottom: -80px;
+  width: 85%;
+  min-height: 220px;
+  background: #f2f2f2;
+  border-radius: 35px;
+  z-index: 1;
+  padding: 40px;
+}
+
+.hero-image {
+  z-index: 2;
+}
+
+.hero-text {
+  z-index: 2;
+}
+
+
+
+footer{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+
+/* =========================================
+   CELULAR
+   Solo afecta la página Home.
+   El menú móvil se controla desde global.css
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* En celular acomodo todo en columna */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding: 60px 18px 40px;
+    gap: 18px;
+  }
+
+  /* Centra Sergio y Coria */
+  .hero-text {
+    width: 100%;
+    text-align: center;
+    font-size: initial;
+  }
+
+  /* Tamaño del nombre en celular */
+  .name {
+    font-size: 58px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    letter-spacing: 7px;
+  }
+
+  /* Cada letra se comporta como bloque individual */
+  .name span {
+    display: inline-block;
+  }
+
+  /* Animación de letras cuando haces scroll */
+  .name.animate span {
+    animation: letterDance 0.8s ease-in-out;
+  }
+
+  /* Movimiento de las letras */
+  @keyframes letterDance {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+
+    30% {
+      transform: translateY(-10px) rotate(-4deg);
+    }
+
+    60% {
+      transform: translateY(5px) rotate(4deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+
+  /* Imagen entre Sergio y Coria */
+  .hero-image {
+    display: block !important;
+    width: 270px !important;
+    height: 360px !important;
+
+    position: relative !important;
+    transform: none !important;
+
+    margin: 5px auto !important;
+
+    overflow: hidden !important;
+    z-index: 5 !important;
+  }
+
+  /* Ambas imágenes ocupan exactamente el mismo espacio */
+  .hero-image img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Foto real visible inicialmente */
+  .image-one {
+    opacity: 1 !important;
+    z-index: 1 !important;
+  }
+
+  /* Caricatura oculta inicialmente */
+  .image-two {
+    opacity: 0 !important;
+    clip-path: none !important;
+    z-index: 2 !important;
+  }
+
+  /* Al tocar la imagen cambia a caricatura */
+  .hero-image.active .image-one {
+    opacity: 0 !important;
+  }
+
+  .hero-image.active .image-two {
+    opacity: 1 !important;
+  }
+
+  /* Tarjeta de texto debajo */
+  .hero-card {
+    position: relative !important;
+
+    width: 88% !important;
+    max-width: 380px;
+
+    min-height: auto !important;
+
+    padding: 34px 26px !important;
+
+    border-radius: 28px;
+
+    margin-top: 45px !important;
+
+    bottom: auto !important;
+  }
+
+  /* Título de la tarjeta */
+  .hero-card h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  /* Texto descriptivo */
+  .newspaper-text p {
+    font-size: 19px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Espacio antes del footer */
+  footer {
+    margin-top: 80px;
+  }
+}

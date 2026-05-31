@@ -1,0 +1,70 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* NAV GLOBAL */
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  background-color: black;
+  padding: 30px;
+  margin: 0;
+  list-style: none;
+}
+
+nav a:link,
+nav a:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: gray;
+}
+
+
+/* ==========================
+   MOBILE NAVIGATION
+========================== */
+
+@media (max-width: 768px) {
+
+  header {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  nav {
+    background: black;
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 4px;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  nav a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+  }
+}
