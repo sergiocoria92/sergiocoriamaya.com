@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Production Tracking</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create items and track production progress">
+    <link rel="stylesheet" href="styles/production-tracking.css">
+    <link rel="stylesheet" href="../../../../styles/global.css">
+</head>
+
+<body>
+<header>
+    <nav class="nav-principal">
+        <ul>
+            <a href="/"><img src="../img/prueba1.png" alt="home" width="90px"></a>
+            <li><a href="../../../portfolio.html">Portfolio</a></li>
+            <li><a href="../../../lab.html">Lab</a></li>
+            <li><a href="../../../resume.html">Resume</a></li>
+            <li><a href="../../../about.html">About</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <aside class="sidebar-erp">
+        <nav class="nav-home-erp">
+            <ul>
+                <li><a href="home.html">ERP Home</a></li>
+                <li><a href="spare.html">Spare Parts</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="orders-information.html">Orders</a></li>
+                <li><a href="production-tracking.html">Production</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="content-production">
+        <div class="page-title">
+            <h1>Production Tracking</h1>
+            <p>Create products, generate QR codes, search items and update production stations.</p>
+        </div>
+
+        <div class="production-card">
+            <h2>Create New Item</h2>
+
+            <form class="create-item-form">
+                <div class="form-group">
+                    <label for="add-item">Item Name</label>
+                    <input id="add-item" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="description-item">Description</label>
+                    <input id="description-item" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input id="date" type="datetime-local">
+                </div>
+
+                <div class="form-group">
+                    <label for="initial-station">Initial Station</label>
+                    <select id="initial-station">
+                        <option value="">Select an area</option>
+                        <option value="cutting">Cutting</option>
+                        <option value="welding">Welding</option>
+                        <option value="painting">Painting</option>
+                        <option value="assembly">Assembly</option>
+                        <option value="quality">Quality</option>
+                        <option value="packaging">Packaging</option>
+                        <option value="shipping">Shipping</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <input id="parts-complete" type="checkbox">
+                    <label for="parts-complete">Parts complete</label>
+                </div>
+
+                <button id="submit-create-item" type="submit">Create Item & QR</button>
+            </form>
+        </div>
+
+        <div class="qr-result">
+            <h2>Generated QR Code</h2>
+            <p id="generatedCode">No code generated yet.</p>
+            <canvas id="qrCanvas"></canvas>
+        </div>
+
+        <div class="production-card">
+            <h2>Search Item</h2>
+
+            <form class="search-item-format">
+                <input id="search" type="text" placeholder="Search by code, item name or station">
+                <button id="search-button" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="production-card">
+            <h2>Update Item Station</h2>
+
+            <form class="update-item-access">
+                <div class="form-group">
+                    <label for="item-code">Item Code</label>
+                    <input id="item-code" type="text" placeholder="Example: BOX-20260615-A8F3K2">
+                </div>
+
+                <div class="form-group">
+                    <label for="update-station">New Station</label>
+                    <select id="update-station">
+                        <option value="">Select an area</option>
+                        <option value="cutting">Cutting</option>
+                        <option value="welding">Welding</option>
+                        <option value="painting">Painting</option>
+                        <option value="assembly">Assembly</option>
+                        <option value="quality">Quality</option>
+                        <option value="packaging">Packaging</option>
+                        <option value="shipping">Shipping</option>
+                    </select>
+                </div>
+
+                <button id="update-button" type="submit">Update Station</button>
+            </form>
+        </div>
+
+        <div class="production-results">
+            <h2>Production Items</h2>
+            <div id="productionItemsList"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Sergio Coria</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="java/production-tracking.js"></script>
+</body>
+</html>

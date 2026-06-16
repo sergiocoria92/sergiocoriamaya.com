@@ -1,52 +1,130 @@
-.about-page {
-  min-height: 100vh;
-  padding: 90px 8%;
-  background: white;
+* {
+  box-sizing: border-box;
 }
 
-.about-container {
+:root {
+  --ink: #111111;
+  --muted: #5f646d;
+  --blue: #0a84ff;
+  --green: #30d158;
+  --blue-soft: rgba(10, 132, 255, 0.12);
+  --green-soft: rgba(48, 209, 88, 0.14);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(10, 132, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 15%, rgba(48, 209, 88, 0.12), transparent 28%),
+    linear-gradient(180deg, #fbfcff 0%, #f4f6fa 45%, #eef1f6 100%);
+}
+
+.about-page {
+  min-height: 100vh;
+  padding: 110px 8% 90px;
+}
+
+.about-hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
+  gap: 70px;
   align-items: center;
 }
 
 .about-text-card {
-  background: #f2f2f2;
-  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 36px;
   padding: 55px;
-  min-height: 550px;
+  box-shadow: 0 28px 90px rgba(18, 34, 66, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 20px;
 }
 
 .about-text-card h1 {
-  font-size: 48px;
-  margin-bottom: 25px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  margin: 0 0 28px;
 }
+
+.about-text-card h1 span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.about-text-card h1 span:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
 
 .about-text-card p {
   font-size: 18px;
   line-height: 1.7;
+  color: #333942;
   margin-bottom: 18px;
 }
 
-.about-image-grid {
+.about-tags {
   display: flex;
-  flex-direction: column;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.about-tags span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.about-gallery {
+  display: grid;
+  gap: 22px;
 }
 
 .about-image-card {
-  height: 170px;
-  border-radius: 30px;
+  height: 175px;
+  border-radius: 32px;
   overflow: hidden;
-  background: #f2f2f2;
+  background: white;
+  box-shadow: 0 24px 70px rgba(18, 34, 66, 0.14);
+  cursor: pointer;
   transition: transform 0.35s ease, height 0.35s ease, box-shadow 0.35s ease;
 }
 
+.about-image-card.large {
+  height: 255px;
+}
+
 .about-image-card:hover {
-  height: 160px;
-  transform: scale(1.05);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 34px 90px rgba(10, 132, 255, 0.18);
+}
+
+.about-image-card.active {
+  height: 310px;
 }
 
 .about-image-card img {
@@ -55,104 +133,110 @@
   object-fit: cover;
 }
 
+.about-story {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
+.story-card {
+  background:
+    radial-gradient(circle at 90% 15%, rgba(10, 132, 255, 0.20), transparent 28%),
+    radial-gradient(circle at 20% 90%, rgba(48, 209, 88, 0.16), transparent 30%),
+    linear-gradient(135deg, #111 0%, #20242b 100%);
+  color: white;
+  border-radius: 30px;
+  padding: 32px;
+  min-height: 280px;
+  box-shadow: 0 24px 70px rgba(18, 34, 66, 0.18);
+  transition: transform 0.3s ease;
+}
 
+.story-card:hover {
+  transform: translateY(-8px);
+}
 
+.story-card span {
+  color: var(--green);
+  font-weight: 900;
+  letter-spacing: 3px;
+}
 
+.story-card h2 {
+  font-size: 28px;
+  margin: 50px 0 18px;
+}
 
+.story-card p {
+  color: #d9dde5;
+  line-height: 1.6;
+}
 
+footer {
+  background: transparent;
+  color: #111;
+  text-align: center;
+  padding: 30px;
+}
 
-/* ==============================
-   ABOUT PAGE - CELULAR
-============================== */
-/* ==============================
-   ABOUT PAGE - CELULAR
-   Este bloque solo controla el contenido de About.
-   El menú/nav ya se controla desde global.css.
-============================== */
+/* ANIMATION */
 
-@media (max-width: 768px) {
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.6s ease;
+}
 
-  /* Reduce el espacio general de la página en celular */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
   .about-page {
-    padding: 45px 18px;
+    padding: 90px 22px 70px;
   }
 
-  /* 
-    En celular usamos 2 columnas:
-    - Columna izquierda: texto About Me
-    - Columna derecha: imágenes pequeñas
-  */
-  .about-container {
-    display: grid;
-    grid-template-columns: 1fr 95px;
-    gap: 14px;
-    align-items: start;
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
-  /* Hace el cuadro de texto más compacto en celular */
   .about-text-card {
-    padding: 32px 24px;
-    border-radius: 28px;
-    min-height: auto;
+    padding: 36px 26px;
   }
 
-  /* Ajusta el título About Me */
+  .about-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-card,
+  .about-image-card.large {
+    height: 220px;
+  }
+
+  .about-story {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .about-text-card h1 {
-    font-size: 40px;
-    line-height: 1.1;
-    margin-bottom: 26px;
+    letter-spacing: -2px;
   }
 
-  /* Ajusta los párrafos para que sean legibles en celular */
   .about-text-card p {
-    font-size: 18px;
-    line-height: 1.55;
-    margin-bottom: 22px;
+    font-size: 17px;
   }
 
-  /* Contenedor de las fotos pequeñas */
-  .about-image-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-
-    /* 
-      Hace que las fotos se queden visibles mientras bajas un poco.
-      Si no te gusta, puedes borrar position: sticky y top.
-    */
-    position: sticky;
-    top: 90px;
+  .about-tags span {
+    font-size: 12px;
   }
 
-  /* Cada foto empieza como un cuadro pequeño */
-  .about-image-card {
-    width: 95px;
-    height: 95px;
-    border-radius: 20px;
-    cursor: pointer;
-    overflow: hidden;
-
-    /* Suaviza el crecimiento cuando se toca */
-    transition: all 0.35s ease;
-  }
-
-  /* 
-    Esta clase se agrega con JavaScript cuando tocas una foto.
-    La imagen crece hacia la izquierda para no salirse de la pantalla.
-  */
-  .about-image-card.active {
-    width: 210px;
-    height: 210px;
-    transform: translateX(-115px);
-    z-index: 10;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  }
-
-  /* La imagen llena completamente su cuadro */
-  .about-image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .story-card h2 {
+    margin-top: 35px;
   }
 }

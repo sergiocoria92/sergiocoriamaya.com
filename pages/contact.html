@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="../styles/global.css?v=11">
-    <link rel="stylesheet" href="../styles/contact.css?v=11">
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Sergio Coria</title>
+
+  <link rel="stylesheet" href="../styles/global.css?v=30">
+  <link rel="stylesheet" href="../styles/contact.css?v=30">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../">Home</a></li>
-                <li><a href="/pages/projects.html">Projects</a></li>
-                <li><a href="/pages/lab.html">Lab</a></li>
-                <li><a href="/pages/resume.html">Resume</a></li>
-                <li><a href="/pages/about.html">About</a></li>  
-                <li><a href="/pages/contact.html">Contact</a></li>  
-            </ul>
-        </nav>
-    </header>
-        <main class="contact-page">
-            <section class="contact-container">
+  <header>
+    <nav class="nav-principal">
+      <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="/pages/portfolio.html">Portfolio</a></li>
+        <li><a href="/pages/lab.html">Lab</a></li>
+        <li><a href="/pages/resume.html">Resume</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-                <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sergiocoriamaya" target="_blank">LinkedIn</a>
-                <a href="https://www.youtube.com/@sergiocoria328" target="_blank">YouTube</a>
-                <a href="https://github.com/sergiocoria92/" target="_blank">GitHub</a>
-                </div>
+  <main class="contact-page">
 
-                <h1>Contact Me</h1>
-                <p>Send me a message and I’ll get back to you soon.</p>
+    <section class="contact-shell">
 
-                <form id="contactForm" class="contact-form">
-                <input type="hidden" name="_subject" value="New message from Sergio Coria website">
-                <input type="hidden" name="_captcha" value="false">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact</p>
+        <h1>Let’s build something practical.</h1>
+        <p>
+          Have a question, opportunity, project idea, or just want to connect?
+          Send me a message and I’ll get back to you soon.
+        </p>
 
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="city" placeholder="City">
-                <input type="tel" name="phone" placeholder="Phone">
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
+        <div class="quick-contact">
+          <a href="mailto:sergiocoria.my@gmail.com">sergiocoria.my@gmail.com</a>
+          <a href="https://www.linkedin.com/in/sergiocoriamaya" target="_blank">LinkedIn</a>
+          <a href="https://github.com/sergiocoria92/" target="_blank">GitHub</a>
+          <a href="https://www.youtube.com/@sergiocoria328" target="_blank">YouTube</a>
+        </div>
+      </div>
 
-                <button type="submit">Send Message</button>
+      <section class="contact-card">
+        <h2>Send a message</h2>
+        <p>Use this form to contact me directly.</p>
 
-                <p id="successMessage" class="success-message">Message sent successfully!</p>
-                </form>
+        <form id="contactForm" class="contact-form">
+          <input type="hidden" name="_subject" value="New message from Sergio Coria website">
+          <input type="hidden" name="_captcha" value="false">
 
-            </section>
-        </main>
-        <script src="../scripts/contact.js?v=11"></script>
-    <footer>
-    </footer>
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="city" placeholder="City">
+          </div>
+
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone">
+          </div>
+
+          <textarea name="message" placeholder="Message" required></textarea>
+
+          <button type="submit" id="sendButton">Send Message</button>
+
+          <p id="successMessage" class="success-message">Message sent successfully.</p>
+          <p id="errorMessage" class="error-message">Something went wrong. Please try again.</p>
+        </form>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sergio Coria Maya</p>
+  </footer>
+
+  <script src="../java/contact.js?v=30"></script>
 </body>
 </html>

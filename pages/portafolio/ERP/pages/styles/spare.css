@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #111827;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 30px;
+    padding: 30px;
+    align-items: start;
+}
+
+.second-nav {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+  margin-bottom: 25px;
+}
+
+.second-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.second-nav li {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.second-nav a {
+  text-decoration: none;
+  background: #eef1f5;
+  color: #222;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.second-nav a:hover {
+  background: #2563eb;
+  color: white;
+}
+
+
+.sidebar-erp {
+    position: sticky;
+    top: 25px;
+}
+
+.nav-home-erp {
+    width: 260px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.12);
+}
+
+.nav-home-erp ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-home-erp li {
+    margin-bottom: 12px;
+}
+
+.nav-home-erp a {
+    display: block;
+    text-decoration: none;
+    color: #222;
+    background: #eef1f5;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.nav-home-erp a:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateX(5px);
+}
+
+
+.title-format-spare h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.format-spares,
+.search-spare-part,
+.spare-results {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+  margin-bottom: 25px;
+}
+
+.spare-part-format,
+.search-spare-part-format {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.spare-part-format label,
+.spare-part-format p,
+.search-spare-part-format label {
+  font-weight: bold;
+  margin: 0;
+}
+
+.spare-part-format input,
+.spare-part-format select,
+.search-spare-part-format input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.spare-item {
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.spare-item strong {
+  color: #111827;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .spare-part-format,
+  .search-spare-part-format {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-erp {
+        position: static;
+    }
+
+    .nav-home-erp {
+        width: 100%;
+    }
+
+}

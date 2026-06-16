@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inventory</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventory page">
+
+    <link rel="stylesheet" href="styles/inventory.css">
+    <link rel="stylesheet" href="../../../../styles/global.css">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="nav-principal">
+        <ul>
+            <a href="/"><img src="../img/prueba1.png" alt="home" width="90px"></a>
+            <li><a href="../../../portfolio.html">Portfolio</a></li>
+            <li><a href="../../../lab.html">Lab</a></li>
+            <li><a href="../../../resume.html">Resume</a></li>
+            <li><a href="../../../about.html">About</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+    <aside class="sidebar-erp">
+        <nav class="nav-home-erp">
+            <ul>
+                <li><a href="home.html">ERP Home</a></li>
+                <li><a href="spare.html">Spare Parts</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="orders-information.html">Orders</a></li>
+                <li><a href="production-tracking.html">Production</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="content-inventory">
+
+        <div class="page-title">
+            <h1>Inventory Management</h1>
+            <p>Add and manage inventory items.</p>
+        </div>
+
+        <div class="inventory-form-card">
+
+            <h2>Add Inventory Item</h2>
+
+            <form class="add-inventory-format">
+
+                <div class="form-group">
+                    <label for="add-item-inventory">Item Name</label>
+                    <input id="add-item-inventory" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="add-part-number">Part Number</label>
+                    <input id="add-part-number" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="area-add-inventory">Area</label>
+
+                    <select id="area-add-inventory">
+
+                        <option value="">Select Area</option>
+                        <option value="cutting">Cutting</option>
+                        <option value="welding">Welding</option>
+                        <option value="painting">Painting</option>
+                        <option value="assembly">Assembly</option>
+                        <option value="quality">Quality</option>
+                        <option value="packaging">Packaging</option>
+                        <option value="shipping">Shipping</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="add-inventory-comment">Comments</label>
+                    <input id="add-inventory-comment" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="date-add-inventory">Date</label>
+                    <input id="date-add-inventory" type="datetime-local">
+                </div>
+
+                <button type="submit">
+                    Save Item
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="inventory-results">
+
+            <h2>Inventory Items</h2>
+
+            <div id="inventoryList"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Sergio Coria</p>
+</footer>
+
+<script src="java/inventory.js"></script>
+
+</body>
+</html>

@@ -1,103 +1,146 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <title> website Sergio Coria </title>
-        <meta charset = "UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/global.css?v=10">
-        <link rel="stylesheet" href="styles/index.css?v=10">
-        <link rel="icon" type="image/png" href="images/y/android-chrome-512x512.png">
+<html lang="en">
+<head>
+  <title>Sergio Coria | Engineering, Software & Systems</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta property="og:title" content="Sergio Coria | Engineering, Software & Systems">
-        <meta property="og:description" content="Personal portfolio showcasing software projects, industrial technology, automation, and experiments.">
-        <meta property="og:image" content="https://sergiocoriamaya.com/images/preview.png">
-        <meta property="og:url" content="https://sergiocoriamaya.com">
-        <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles/global.css?v=30">
+  <link rel="stylesheet" href="styles/index.css?v=30">
+  <link rel="icon" type="image/png" href="images/y/android-chrome-512x512.png">
 
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-40JN7K2W9X"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <meta property="og:title" content="Sergio Coria | Engineering, Software & Systems">
+  <meta property="og:description" content="Personal portfolio showcasing software projects, industrial technology, automation, and experiments.">
+  <meta property="og:image" content="https://sergiocoriamaya.com/images/preview.png">
+  <meta property="og:url" content="https://sergiocoriamaya.com">
+  <meta property="og:type" content="website">
 
-        gtag('config', 'G-40JN7K2W9X'); 
-        </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40JN7K2W9X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-40JN7K2W9X");
+  </script>
+</head>
 
-    </head>
-    <body>
-        <header>
-                <nav>
-                    <ul>
-                        <li><a href = "/"> Home </a></li>
-                        <li><a href = "../pages/projects.html"> Projects </a></li>
-                        <li><a href = "../pages/lab.html"> Lab </a></li>
-                        <li><a href = "../pages/resume.html"> Resume </a></li>
-                        <li><a href = "../pages/about.html"> About </a></li>
-                        <li><a href = "../pages/contact.html"> Contact </a></li>
-                    </ul>
-                </nav>
-        </header>
+<body>
+  <header>
+    
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../pages/portfolio.html">Portfolio</a></li>
+          <li><a href="../pages/lab.html">Lab</a></li>
+          <li><a href="../pages/resume.html">Resume</a></li>
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>  
+    
+  </header>
 
-        <main>
 
-        <section class="hero">
+  <main>
 
-        <div class="hero-text">
-            <h1 class="name">Sergio</h1>
+    <aside class="page-directory">
+      <p>Directory</p>
+      <a href="#intro">Shop floor → Software</a>
+      <a href="#building">What I’m building</a>
+      <a href="#featured">Featured direction</a>
+    </aside>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Manufacturing × Software × Systems</p>
+
+        <h1>Sergio Coria</h1>
+
+        <h2>Industrial Engineer learning Software Development.</h2>
+
+        <p class="hero-description">
+          I connect real manufacturing experience with software development to build practical systems for real-world problems.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="../pages/portfolio.html">View Projects</a>
+          <a href="../pages/resume.html" class="secondary-button">Resume</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img class="image-one" src="images/sergio.png" alt="Sergio Coria">
+        <img class="image-two" src="images/sergio-cartoon4.png" alt="Sergio cartoon version">
+      </div>
+    </section>
+
+    <section class="intro-section" id="intro">
+      <div class="intro-card">
+        <h2>From the shop floor to software.</h2>
+        <p>
+          My background comes from real operations: production, maintenance, quality, process improvement, and problem solving.
+          Now I’m combining that experience with software development to create better workflows, useful tools, and smarter systems.
+        </p>
+      </div>
+    </section>
+
+    <section class="cards-section" id="building">
+      <div class="section-title">
+        <p>What I’m building</p>
+        <h2>Projects, experiments, and ideas.</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <span>01</span>
+          <h3>Manufacturing Systems</h3>
+          <p>Maintenance, production support, quality, process improvement, and practical industrial tools.</p>
+        </article>
+
+        <article class="card">
+          <span>02</span>
+          <h3>Software Projects</h3>
+          <p>Web applications, databases, APIs, automation projects, and software development practice.</p>
+        </article>
+
+        <article class="card">
+          <span>03</span>
+          <h3>The Lab</h3>
+          <p>Personal experiments with robotics, 3D, creative ideas, learning projects, and prototypes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="featured-section" id="featured">
+      <div class="section-title dark-text">
+        <p>Featured direction</p>
+        <h2>Building toward industrial technology.</h2>
+      </div>
+
+      <div class="featured-grid">
+        <div>
+          <h3>Maintenance System Concept</h3>
+          <p>A future system to track equipment, preventive maintenance, downtime, parts, and work orders.</p>
         </div>
 
-        <div class="hero-image">
-            <img class="image-one" src="images/sergio.png" alt="Sergio Coria">
-            <img class="image-two" src="images/sergio-cartoon4.png" alt="Second image">
+        <div>
+          <h3>Personal Portfolio Website</h3>
+          <p>This website is part of my learning journey in HTML, CSS, JavaScript, design, and deployment.</p>
         </div>
 
-        <div class="hero-text">
-            <h1 class="name">Coria</h1>
+        <div>
+          <h3>Software Learning Projects</h3>
+          <p>School and personal projects focused on CRUD apps, APIs, databases, and web development.</p>
         </div>
+      </div>
+    </section>
 
-        
-        <div class="hero-card">
+  </main>
 
-        <h2>Engineering. Software. Systems. Ideas.</h2>
+  <footer>
+    <p>© 2026 Sergio Coria</p>
+  </footer>
 
-        <div class="newspaper-text">
-
-                <p>
-
-                    I design and build projects that combine technology, manufacturing, automation, and problem solving.
-
-                    My background in industrial engineering and real-world operations allows me to approach software and systems from a practical perspective — focused on efficiency, usability, and execution.
-
-                    This portfolio is a collection of projects, experiments, and ideas currently shaping my journey across software development, robotics, and industrial technology.
-                </p>
-
-        </div>
-
-        
-
-        </section>
-
-        </main>
-        <footer>
-      
-        </footer>
-
-        
-        <script src="java/index.js?v=10"></script>
-
-
-<!--         <script type="importmap">
-        {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
-        }
-        }
-        </script>-->
-        
-    </body>
+  <script src="java/index.js?v=30"></script>
+</body>
 </html>

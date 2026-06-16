@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ERP Coria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ERP Coria emulator">
+    
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="../../../styles/global.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="nav-principal">
+        <ul>
+            <a href="/"><img src="img/prueba1.png" alt="home" width="80"></a>
+            <li><a href="../../portfolio.html">Portfolio</a></li>
+            <li><a href="../../lab.html">Lab</a></li>
+            <li><a href="../../resume.html">Resume</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="erp-login-page">
+
+    <div class="erp-card">
+
+        <a class="back-link" href="../../portfolio.html">
+            ← Return to Portfolio
+        </a>
+
+        <div class="logo-section">
+            <img src="img/prueba1.png" alt="ERP Logo">
+            <h1>ERP Coria Emulator</h1>
+        </div>
+
+        <p class="intro-text">
+            Explore a complete ERP simulation including inventory,
+            spare parts, production tracking and order management.
+        </p>
+
+        <form id="loginForm" class="login-form">
+
+            <div class="form-group">
+                <label for="user">Username</label>
+                <input
+                    id="user"
+                    type="text"
+                    placeholder="Enter username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter password">
+            </div>
+
+            <button id="signin" type="submit">
+                Sign In
+            </button>
+
+        </form>
+
+        <div class="credentials-box">
+            <h3>Demo Credentials</h3>
+
+            <p>
+                <strong>User:</strong> pruebacoria
+            </p>
+
+            <p>
+                <strong>Password:</strong> 123abc
+            </p>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Sergio Coria</p>
+</footer>
+
+<script src="java/index.js"></script>
+
+</body>
+</html>

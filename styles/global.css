@@ -10,7 +10,7 @@ body {
 }
 
 /* NAV GLOBAL */
-nav ul {
+.nav-principal ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,14 +22,14 @@ nav ul {
   list-style: none;
 }
 
-nav a:link,
-nav a:visited {
+.nav-principal a:link,
+.nav-principal a:visited {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
 
-nav a:hover {
+.nav-principal a:hover {
   color: gray;
 }
 
@@ -44,13 +44,12 @@ nav a:hover {
     width: 100%;
     overflow: hidden;
   }
-
-  nav {
+  .nav-principal {
     background: black;
     width: 100%;
   }
 
-  nav ul {
+  .nav-principal ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +61,7 @@ nav a:hover {
     white-space: nowrap;
   }
 
-  nav a {
+  .nav-principal a {
     font-size: 13px;
     color: white;
     text-decoration: none;

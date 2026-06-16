@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Orders Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="web page to consult or change orders">
+    <link rel="stylesheet" href="styles/orders-information.css">
+    <link rel="stylesheet" href="../../../../styles/global.css">
+</head>
+
+<body>
+<header>
+    <nav class="nav-principal">
+        <ul>
+            <a href="/"><img src="../img/prueba1.png" alt="home" width="90px"></a>
+            <li><a href="../../../portfolio.html">Portfolio</a></li>
+            <li><a href="../../../lab.html">Lab</a></li>
+            <li><a href="../../../resume.html">Resume</a></li>
+            <li><a href="../../../about.html">About</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <aside class="sidebar-erp">
+        <nav class="nav-home-erp">
+            <ul>
+                <li><a href="home.html">ERP Home</a></li>
+                <li><a href="spare.html">Spare Parts</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="orders-information.html">Orders</a></li>
+                <li><a href="production-tracking.html">Production</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="content-orders">
+        <div class="page-title">
+            <h1>Orders Information</h1>
+            <p>Create, search and manage production orders.</p>
+        </div>
+
+        <div class="orders-form-card">
+            <h2>New Production Order</h2>
+
+            <form class="add-orders-production-format">
+                <div class="form-group">
+                    <label for="new-order-production-status">Status</label>
+                    <select id="new-order-production-status">
+                        <option value="">Select a status</option>
+                        <option value="open">Open</option>
+                        <option value="closed">Closed</option>
+                        <option value="process">Process</option>
+                        <option value="not started">Not Started</option>
+                        <option value="working">Working</option>
+                        <option value="waiting">Waiting</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-order-production-number">Order Number</label>
+                    <input id="new-order-production-number" type="number">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-order-production-customer">Customer</label>
+                    <input id="new-order-production-customer" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-order-production-quantity">Quantity</label>
+                    <input id="new-order-production-quantity" type="number">
+                </div>
+
+                <div class="form-group">
+                    <label for="add-order-production-start-date">Start Date</label>
+                    <input id="add-order-production-start-date" type="datetime-local">
+                </div>
+
+                <button type="submit">Save Order</button>
+            </form>
+        </div>
+
+        <div class="search-orders-information">
+            <h2>Search Order</h2>
+
+            <form class="search-orders-information-format">
+                <input id="search-orders-number" type="text" placeholder="Search by order number or customer">
+                <button id="button-search-orders-number" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="orders-results">
+            <h2>Saved Orders</h2>
+            <div id="ordersList"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Sergio Coria</p>
+</footer>
+
+<script src="java/orders-information.js"></script>
+</body>
+</html>

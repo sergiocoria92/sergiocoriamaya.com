@@ -1,48 +1,183 @@
-
-.name span {/* Estilo para cada letra del nombre... RECUERDA QUE SPAN ES UN ELEMENTO EN LÍNEA, lo creaste en javascript,igual que name*/
-  display: inline-block;
-  transition: transform 0.3s;
-  padding: 5px;
-  top: 20px;
+* {
+  box-sizing: border-box;
 }
 
-.name span:hover {
-  transform: translateY(-10px);
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+/* DIRECTORY */
+
+.page-directory {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.page-directory p {
+  display: none;
+}
+
+.page-directory a {
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page-directory a:hover {
+  background: #111;
+  color: white;
+}
+
+.page-directory.dark-mode {
+  background: rgba(15, 15, 15, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.page-directory.dark-mode a {
+  color: white;
+}
+
+.page-directory.dark-mode a:hover {
+  background: white;
+  color: #111;
+}
+
+@media (max-width: 1000px) {
+  .page-directory {
+    display: none;
+  }
+}
+/* HERO */
 
 .hero {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  padding: 120px 8% 80px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 60px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(90, 90, 90, 0.35), transparent 30%),
+    linear-gradient(180deg, #000000 0%, #111111 68%, #f4f4f4 100%);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: #9f9f9f;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 9vw, 130px);
+  line-height: 0.9;
+  margin: 0 0 25px;
+  letter-spacing: -5px;
+}
+
+.hero h2 {
+  font-size: clamp(26px, 4vw, 54px);
+  line-height: 1.05;
+  margin: 0 0 25px;
+  color: #e8e8e8;
+  max-width: 780px;
+}
+
+.hero-description {
+  font-size: 21px;
+  line-height: 1.5;
+  color: #cfcfcf;
+  max-width: 660px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  color: #111;
   background: white;
-  position: relative;
-}
-
-.hero-text {
-  font-size: 70px;
+  padding: 15px 26px;
+  border-radius: 999px;
   font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  color: white;
+  background: linear-gradient(135deg, #0a84ff, #30d158);
+  box-shadow: 0 18px 40px rgba(10, 132, 255, 0.28);
+}
 
+.hero-buttons .secondary-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+}
 
-/* Estilos para el card que se superpone a la imagen y al texto */
+.hero-buttons .secondary-button:hover {
+  background: linear-gradient(135deg, #0a84ff, #30d158);
+  color: white;
+  border-color: transparent;
+}
+
+/* IMAGE */
+
 .hero-image {
   position: relative;
-  width: 420px;
-  height: 600px;
-  z-index: 2;
+  width: min(420px, 100%);
+  height: 560px;
+  justify-self: center;
+  align-self: start;
+  margin-top: 95px;
   overflow: hidden;
 }
 
 .hero-image img {
   position: absolute;
   inset: 0;
-  width: 420px;
-  max-height: 600px;
+  width: 100%;
   height: 100%;
   object-fit: contain;
 }
@@ -55,191 +190,195 @@
   z-index: 2;
   clip-path: inset(0 100% 0 0);
 }
-/* Estilos para el card que se superpone a la imagen y al texto */
 
+/* INTRO */
 
+.intro-section {
+  background: #f4f4f4;
+  color: #111;
+  padding: 80px 8%;
+}
 
-
-
-.hero-card {
-  position: absolute;
-  bottom: -80px;
-  width: 85%;
-  min-height: 220px;
-  background: #f2f2f2;
+.intro-card {
+  background: white;
   border-radius: 35px;
-  z-index: 1;
-  padding: 40px;
+  padding: 50px;
+  max-width: 1100px;
+  margin: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
-.hero-image {
-  z-index: 2;
+.intro-card h2 {
+  font-size: clamp(36px, 5vw, 70px);
+  margin: 0 0 20px;
+  letter-spacing: -2px;
 }
 
-.hero-text {
-  z-index: 2;
+.intro-card p {
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 950px;
 }
 
+/* CARDS */
 
-
-footer{
-    margin-top: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.cards-section {
+  background: #f4f4f4;
+  color: #111;
+  padding: 70px 8% 100px;
 }
 
+.section-title {
+  margin-bottom: 40px;
+}
 
+.section-title p {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  color: #777;
+  font-weight: 700;
+}
 
+.section-title h2 {
+  font-size: clamp(36px, 5vw, 68px);
+  margin: 0;
+  letter-spacing: -2px;
+}
 
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
 
+.card {
+  background: #111;
+  color: white;
+  padding: 35px;
+  border-radius: 30px;
+  min-height: 300px;
+  transition: transform 0.3s ease;
+}
 
-/* =========================================
-   CELULAR
-   Solo afecta la página Home.
-   El menú móvil se controla desde global.css
-========================================= */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card span {
+  color: #888;
+  font-size: 14px;
+}
+
+.card h3 {
+  font-size: 30px;
+  margin: 70px 0 18px;
+}
+
+.card p {
+  color: #d0d0d0;
+  line-height: 1.5;
+  font-size: 17px;
+}
+
+/* FEATURED */
+
+.featured-section {
+  background: white;
+  color: #111;
+  padding: 90px 8% 120px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.featured-grid div {
+  border-top: 2px solid #111;
+  padding-top: 25px;
+}
+
+.featured-grid h3 {
+  font-size: 25px;
+}
+
+.featured-grid p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* LETTER EFFECT */
+
+.hero h1 span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hero h1 span:hover {
+  transform: translateY(-10px);
+}
+
+/* FOOTER */
+
+footer {
+  background: white;
+  color: #111;
+  padding: 30px;
+  text-align: center;
+}
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+  .page-directory {
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
-
-  /* En celular acomodo todo en columna */
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: auto;
-    padding: 60px 18px 40px;
-    gap: 18px;
-  }
-
-  /* Centra Sergio y Coria */
-  .hero-text {
-    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 100px 22px 70px;
     text-align: center;
-    font-size: initial;
   }
 
-  /* Tamaño del nombre en celular */
-  .name {
-    font-size: 58px !important;
-    line-height: 1 !important;
-    margin: 0 !important;
-    letter-spacing: 7px;
+  .hero h1 {
+    letter-spacing: -2px;
   }
 
-  /* Cada letra se comporta como bloque individual */
-  .name span {
-    display: inline-block;
+  .hero-description {
+    font-size: 18px;
   }
 
-  /* Animación de letras cuando haces scroll */
-  .name.animate span {
-    animation: letterDance 0.8s ease-in-out;
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  /* Movimiento de las letras */
-  @keyframes letterDance {
-    0% {
-      transform: translateY(0) rotate(0);
-    }
-
-    30% {
-      transform: translateY(-10px) rotate(-4deg);
-    }
-
-    60% {
-      transform: translateY(5px) rotate(4deg);
-    }
-
-    100% {
-      transform: translateY(0) rotate(0);
-    }
-  }
-
-  /* Imagen entre Sergio y Coria */
   .hero-image {
-    display: block !important;
-    width: 270px !important;
-    height: 360px !important;
-
-    position: relative !important;
-    transform: none !important;
-
-    margin: 5px auto !important;
-
-    overflow: hidden !important;
-    z-index: 5 !important;
+    height: 390px;
+    order: -1;
+    margin-top: 0;
+    align-self: center;
   }
 
-  /* Ambas imágenes ocupan exactamente el mismo espacio */
-  .hero-image img {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    display: block !important;
+  .cards-grid,
+  .featured-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Foto real visible inicialmente */
-  .image-one {
-    opacity: 1 !important;
-    z-index: 1 !important;
+  .intro-card {
+    padding: 35px 25px;
   }
 
-  /* Caricatura oculta inicialmente */
-  .image-two {
-    opacity: 0 !important;
-    clip-path: none !important;
-    z-index: 2 !important;
+  .intro-card p {
+    font-size: 18px;
   }
 
-  /* Al tocar la imagen cambia a caricatura */
-  .hero-image.active .image-one {
-    opacity: 0 !important;
-  }
-
-  .hero-image.active .image-two {
-    opacity: 1 !important;
-  }
-
-  /* Tarjeta de texto debajo */
-  .hero-card {
-    position: relative !important;
-
-    width: 88% !important;
-    max-width: 380px;
-
-    min-height: auto !important;
-
-    padding: 34px 26px !important;
-
-    border-radius: 28px;
-
-    margin-top: 45px !important;
-
-    bottom: auto !important;
-  }
-
-  /* Título de la tarjeta */
-  .hero-card h2 {
-    font-size: 30px;
-    line-height: 1.1;
-    margin: 0 0 16px;
-  }
-
-  /* Texto descriptivo */
-  .newspaper-text p {
-    font-size: 19px;
-    line-height: 1.45;
-    margin: 0;
-  }
-
-  /* Espacio antes del footer */
-  footer {
-    margin-top: 80px;
+  .card h3 {
+    margin-top: 45px;
   }
 }

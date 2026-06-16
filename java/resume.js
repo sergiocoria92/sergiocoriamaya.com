@@ -1,11 +1,9 @@
-const aboutTitle = document.querySelector(".about-text-card h1");
+const resumeTitle = document.querySelector(".resume-hero h1");
 
-console.log("About title found:", aboutTitle);
+if (resumeTitle) {
+  const text = resumeTitle.textContent.trim();
 
-if (aboutTitle) {
-  const text = aboutTitle.textContent.trim();
-
-  aboutTitle.innerHTML = "";
+  resumeTitle.innerHTML = "";
 
   text.split("").forEach(function(letter) {
     const span = document.createElement("span");
@@ -16,26 +14,12 @@ if (aboutTitle) {
       span.textContent = letter;
     }
 
-    aboutTitle.appendChild(span);
+    resumeTitle.appendChild(span);
   });
 }
 
-const imageCards = document.querySelectorAll(".about-image-card");
-
-imageCards.forEach(function(card) {
-  card.addEventListener("click", function() {
-    imageCards.forEach(function(otherCard) {
-      if (otherCard !== card) {
-        otherCard.classList.remove("active");
-      }
-    });
-
-    card.classList.toggle("active");
-  });
-});
-
 const revealElements = document.querySelectorAll(
-  ".about-image-card, .story-card"
+  ".job, .skill-card, .cert-card, .sidebar-card"
 );
 
 revealElements.forEach(function(element) {
